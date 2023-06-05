@@ -1,0 +1,146 @@
+﻿@page
+@model WebAppProgDay31.Pages.FarmerTableModel
+@{
+}
+<!DOCTYEP html>
+<html>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+
+ input[type=date] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button[type=submit] {
+   width: 25%;
+  background-color: #FF7F50;                                                                                                                        
+  padding: 10px 1px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  float: center;
+}
+
+button[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+ <body>
+   
+        <ul class="nav">
+            <li><a href="FarmerAndProductView">View Products</a></li>
+            <li class="nav-left"><a href="Index">Logout</a></li>
+        </ul>
+<h1>Create Farmer</h1>
+  
+<form method="post">
+ 
+    
+    @if (!string.IsNullOrEmpty(Model.invalidMessage))
+    {
+        <a class="alert-danger">@Model.invalidMessage</a>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.validMessage))
+    {
+        <a class="alert-success"> @Model.validMessage</a>
+
+    }
+                          <div class="row">
+                          <div class="col-25">
+                          <label for="title">Title</label>
+                          </div>
+                          <div class="col-75">
+                           <select id="tile" name="title">
+                              <option value="">Select title</option>
+                              <option value="miss">Miss</option>
+                              <option value="mrs">Mrs</option>
+                             <option value="mr"> Mr</option>
+                            </select>
+    <div class="row">
+    <div class="col-25">
+        <label for="name">Name:</label>
+        </div>
+         <div class="col-75">
+        <input type="text" id="name" name="name"  required/>
+    </div>
+               
+    <div class="row">
+    <div class="col-25">
+        <label for="farm">Farm Name:</label>
+         </div>
+         <div class="col-75">
+                    <input type="text" id="farm" name="farm" required/>
+    </div>
+            <div class="row">
+              <div class="col-25">
+        <label for="locality">Locality:</label>
+                            </div>
+                            <div class="col-75">
+                    <input type="text" id="locality" name="locality" required/>
+    </div>
+                            <div class="row">
+                                <div class="col-25">
+        <label for="sdate">Start Date:</label>
+                                </div>
+                                <div class="col-75">
+                                    <input type="date" id="sdate" name="sdate" required />
+    </div>
+    <div class="row">
+    <div class="col-25">
+        <label for="edate">End Date:</label>
+        </div>
+         <div class="col-75">
+                                        <input type="date" id="edate" name="edate" required />
+    </div>
+    <button type="submit">Add</button>
+
+    </form>       
+</body>
+</html>
+

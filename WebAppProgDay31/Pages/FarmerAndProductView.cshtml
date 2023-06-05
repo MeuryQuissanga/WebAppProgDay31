@@ -1,0 +1,97 @@
+﻿@page
+@model WebAppProgDay31.Pages.FarmerAndProductViewModel
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #f2f2f2;
+        }
+
+        select, input[type="date"] {
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        #farmerComboBox, #productComboBox {
+            width: 150px;
+        }
+
+        #startDatePicker, #endDatePicker {
+            width: 170px;
+        }
+    </style>
+</head>
+<body>
+    <h1>List of Farmers and Products</h1>
+
+    <select id="farmerComboBox" name="farmer">
+        <option value="Farmer1">Farmer 1</option>
+        <option value="Farmer2">Farmer 2</option>
+        <option value="Farmer3">Farmer 3</option>
+        <!-- Add more farmer options here -->
+    </select>
+
+    <select id="productComboBox" name="product">
+        <option value="Product1">Product 1</option>
+        <option value="Product2">Product 2</option>
+        <option value="Product3">Product 3</option>
+        <!-- Add more product options here -->
+    </select>
+
+    <input type="date" id="startDatePicker" mzke>
+
+    <input type="date" id="endDatePicker">
+    <Button type="submit" ></Button>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Farmer Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                 
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.obj. Table())
+            {
+             
+                <tr>
+                    <td>@item.FarmerName1</td>
+                <td>@item.Productid1</td>
+                    <td>@item.Locality1</td>
+                    <td>@item.StartDate1</td>
+                <td>@item.Price1</td>
+                
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,111 @@
+﻿@page
+@model WebAppProgDay31.Pages.ProductTableModel
+@{
+}
+<!DOCTYEP html>
+<html>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    input[type=text] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    input[type=number] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;}
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+
+    button[type=submit] {
+        width: 25%;
+        background-color: #FF7F50;
+        padding: 2px 1px;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+        float: center;
+    }
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+    .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+</style>
+<h1>Add Produt</h1>
+<body>
+        
+    <form method="post">
+            @if (!string.IsNullOrEmpty(Model.InvalidMessage))
+            {
+            <a class="alert-danger">@Model.InvalidMessage</a>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.validMessage))
+            {
+            <a class="alert-success"> @Model.InvalidMessage</a>
+
+            }
+            <div class="row">
+                <div class="col-25">
+        <label for="productname">Product Name:</label>
+                </div>
+                <div class="col-75">
+        <input type="text" id="productname" name="productname" required />
+    </div>
+                <div class="row">
+                    <div class="col-25">
+        <label for="productcategorie">Categorie:</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="text" id="productcategorie" name="productcategorie" required />
+    </div>
+                    <div class="row">
+                        <div class="col-25">
+        <label for="price">Price:</label>
+                        </div>
+                        <div class="col-75">
+                        <input type="text" id="price" name="price" required />
+    </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="quantity">Quantity:</label>
+                    </div>
+                    <div class="col-75">
+                    <input type="text" id="quantity" name="quantity" required />
+                    </div>
+
+          <button type="submit">Add</button>
+</form>
+    </body>
+
+    </html>

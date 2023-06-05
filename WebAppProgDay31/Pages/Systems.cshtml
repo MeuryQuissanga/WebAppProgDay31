@@ -1,0 +1,116 @@
+﻿@page
+@model WebAppProgDay31.Pages.SystemsModel
+@{
+}
+
+<html>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    input[type=text] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    input[type=password] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+
+    button[type=submit] {
+        width: 25%;
+        background-color: #FF7F50;
+        padding: 2px 1px;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+        float: center;
+    }
+
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+</style>
+<body>
+    <h1>Login</h1>
+
+
+    @if (!string.IsNullOrEmpty(Model.invalidMessage))
+    {
+        <a class="alert-danger">@Model.invalidMessage</a>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.validMessage))
+    {
+        <a class="alert-success"> @Model.validMessage</a>
+
+    }
+<form method="post">
+        <div class="row">
+            <div class="col-25">
+        <label for="username">Username:</label>
+            </div>
+            <div class="col-75">
+        <input type="text" id="username" name="username" required />
+    </div>
+            <div class="row">
+                <div class="col-25">
+        <label for="password">Password:</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="password" name="password" required />
+    </div>
+                <div class="row">
+                    <div class="col-25">
+        <label for="system">System</label>
+                    </div>
+                    <div class="col-75">
+                        <select id="system" name="System" required>
+                <option value="">Select the System</option>
+                <option value="employee">Employee</option>
+                <option value="farmer">Farmer</option>
+            </select>
+        </div>
+    <button type="submit">Login</button>
+</form>
+</body>
+</html>
